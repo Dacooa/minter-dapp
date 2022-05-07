@@ -42,7 +42,7 @@ async function main() {
     const url = "https://api.nftport.xyz/v0/metadata/directory";
     const options = {
       method: "POST",
-      headers: {},
+      headers: { "Authorization": process.env.NFTPORT_API_KEY }, 
       body: formData,
     };
     const response = await fetchNoRetry(url, options);

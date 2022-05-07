@@ -33,7 +33,7 @@ async function main() {
           formData.append("file", fileStream);
           const options = {
             method: "POST",
-            headers: {},
+            headers: { "Authorization": process.env.NFTPORT_API_KEY }, 
             body: formData,
           };
           const response = await fetchWithRetry(url, options);
